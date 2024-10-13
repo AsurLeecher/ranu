@@ -171,16 +171,16 @@ async def account_login(bot: Client, m: Message):
             batch_message: Message = await bot.send_message(m.chat.id, f"**{b_name}**")
 
             try:
-                await bot.pin_chat_message(m.chat.id, batch_message.id)
-                message_link = batch_message.link
-            except Exception as e:
-                await bot.send_message(m.chat.id, f"Failed to pin message: {str(e)}")
-                message_link = None  # Fallback value
+    await bot.pin_chat_message(m.chat.id, batch_message.id)
+    message_link = batch_message.link
+except Exception as e:
+    await bot.send_message(m.chat.id, f"Failed to pin message: {str(e)}")
+    message_link = None  # फॉलबैक मान
 
-            message_id = batch_message.id
-            pinning_message_id = message_id + 1
+message_id = batch_message.id
+pinning_message_id = message_id + 1  # सुनिश्चित करें कि इसका सही उपयोग हो
 
-            if message_link:
+if message_link:
     end_message = (
         f"⋅ ─ list index (**{count}**-**{len(links)}**) out of range ─ ⋅\n\n"
         f"✨ **BATCH** » <a href=\"{message_link}\">{b_name}</a> ✨\n\n"
