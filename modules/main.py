@@ -20,10 +20,10 @@ from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-'''OWNER = int(os.environ.get("OWNER", 6938835589))
+'''OWNER = int(os.environ.get("OWNER", 6931140424))
 try: 
     ADMINS=[] 
-    for x in (os.environ.get("ADMINS", "7168441486 6938835589").split()): 
+    for x in (os.environ.get("ADMINS", "6931140424 6938835589").split()): 
         ADMINS.append(int(x)) 
 except ValueError: 
         raise Exception("Your Admins list does not contain valid integers.") 
