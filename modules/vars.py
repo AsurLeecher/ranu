@@ -1,5 +1,5 @@
-api_id = 20491966
-api_hash = "aa1c8f86db7f78fe9bfdd77bb48a5b23"
-bot_token = "7715923217:AAEs5yajSsyC925AstG4uBH7aNLLh6VWDJE"
-AUTH = 7168441486
+api_id = 23303247
+api_hash = "23623f737dc15708708c65a7297e1510"
+bot_token = "7979485038:AAFNKQ03fCANZDmyb_pZNSCEDsaeTc91saA"
+AUTH = 6931140424
 #Bot Username = "annukijaanbot"
