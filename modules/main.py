@@ -181,28 +181,28 @@ async def account_login(bot: Client, m: Message):
             pinning_message_id = message_id + 1
 
             if message_link:
-                end_message = (
-                    f"⋅ ─ list index (**{count}**-**{len(links)}**) out of range ─ ⋅\n\n"
-                    f"✨ **BATCH** » <a href=\"{message_link}\">{b_name}</a> ✨\n\n"
-                    f"⋅ ─ DOWNLOADING ✩ COMPLETED ─ ⋅"
-                )
-            else:
-                end_message = (
-                    f"⋅ ─ list index (**{count}**-**{len(links)}**) out of range ─ ⋅\n\n"
-                    f"✨ **BATCH** » {b_name} ✨\n\n"
-                f"⋅ ─ DOWNLOADING ✩ COMPLETED ─ ⋅"
-            )
+    end_message = (
+        f"⋅ ─ list index (**{count}**-**{len(links)}**) out of range ─ ⋅\n\n"
+        f"✨ **BATCH** » <a href=\"{message_link}\">{b_name}</a> ✨\n\n"
+        f"⋅ ─ DOWNLOADING ✩ COMPLETED ─ ⋅"
+    )
+else:
+    end_message = (
+        f"⋅ ─ list index (**{count}**-**{len(links)}**) out of range ─ ⋅\n\n"
+        f"✨ **BATCH** » {b_name} ✨\n\n"
+        f"⋅ ─ DOWNLOADING ✩ COMPLETED ─ ⋅"
+    )
 
-        try:
-            await bot.delete_messages(chat_id, pinning_message_id)
-        except Exception as e:
-            await bot.send_message(chat_id, f"Failed to delete pinning message: {str(e)}")
-    else:
-        end_message = (
-            f"⋅ ─ list index ({count}-{end_count}) out of range ─ ⋅\n\n"
-            f"✨ BATCH » {b_name} ✨\n\n"
-            f"⋅ ─ DOWNLOADING ✩ COMPLETED ─ ⋅"
-        )
+try:
+    await bot.delete_messages(chat_id, pinning_message_id)
+except Exception as e:
+    await bot.send_message(chat_id, f"Failed to delete pinning message: {str(e)}")
+
+end_message = (
+    f"⋅ ─ list index ({count}-{end_count}) out of range ─ ⋅\n\n"
+    f"✨ BATCH » {b_name} ✨\n\n"
+    f"⋅ ─ DOWNLOADING ✩ COMPLETED ─ ⋅"
+)
 
            
 
